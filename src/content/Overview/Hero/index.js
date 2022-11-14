@@ -1,10 +1,10 @@
 import {
   Box,
-  Button,
-  Container,
   Grid,
-  Typography,
-  styled
+  Button,
+  styled,
+  Container,
+  Typography
 } from '@mui/material';
 
 import Link from 'src/components/Link';
@@ -23,75 +23,15 @@ const TypographyH2 = styled(Typography)(
 
 const LabelWrapper = styled(Box)(
   ({ theme }) => `
-    background-color: ${theme.colors.success.main};
-    color: ${theme.palette.success.contrastText};
-    font-weight: bold;
-    border-radius: 30px;
-    text-transform: uppercase;
-    display: inline-block;
-    font-size: ${theme.typography.pxToRem(11)};
-    padding: ${theme.spacing(0.5)} ${theme.spacing(1.5)};
-    margin-bottom: ${theme.spacing(2)};
-`
-);
-
-const MuiAvatar = styled(Box)(
-  ({ theme }) => `
-    width: ${theme.spacing(8)};
-    height: ${theme.spacing(8)};
-    border-radius: ${theme.general.borderRadius};
-    background-color: #e5f7ff;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto ${theme.spacing(2)};
-
-    img {
-      width: 60%;
-      height: 60%;
-      display: block;
-    }
-`
-);
-
-const JsAvatar = styled(Box)(
-  ({ theme }) => `
-    width: ${theme.spacing(8)};
-    height: ${theme.spacing(8)};
-    border-radius: ${theme.general.borderRadius};
-    background-color: #dfebf6;
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto ${theme.spacing(2)};
-
-  img {
-    width: 60%;
-    height: 60%;
-    display: block;
-  }
-`
-);
-
-const NextJsAvatar = styled(Box)(
-  ({ theme }) => `
-  width: ${theme.spacing(8)};
-  height: ${theme.spacing(8)};
-  border-radius: ${theme.general.borderRadius};
-  background-color: #dfebf6;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto ${theme.spacing(2)};
-
-    img {
-      width: 60%;
-      height: 60%;
-      display: block;
-    }
+  font-weight: bold;
+  border-radius: 30px;
+  display: inline-block;
+  text-transform: uppercase;
+  margin-bottom: ${theme.spacing(2)};
+  font-size: ${theme.typography.pxToRem(11)};
+  color: ${theme.palette.success.contrastText};
+  background-color: ${theme.colors.success.main};
+  padding: ${theme.spacing(0.5)} ${theme.spacing(1.5)};
 `
 );
 
@@ -119,14 +59,12 @@ function Hero() {
           </TypographyH2>
           <Button
             component={Link}
-            href="/school/dashboards/crypto"
+            href="/school/dashboard"
             size="large"
             variant="contained"
           >
             Enter Dashboard
           </Button>
-          
-         
         </Grid>
       </Grid>
     </Container>

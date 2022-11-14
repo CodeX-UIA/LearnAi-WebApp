@@ -1,21 +1,22 @@
 import { useContext } from 'react';
-import Scrollbar from 'src/components/Scrollbar';
-import { SidebarContext } from 'src/contexts/SidebarContext';
 
 import {
   Box,
-  Drawer,
   alpha,
   styled,
-  Divider,
-  useTheme,
-  Button,
+  darken,
+  Drawer,
   lighten,
-  darken
+  Divider,
+  useTheme
 } from '@mui/material';
 
 import SidebarMenu from './SidebarMenu';
+
 import Logo from 'src/components/LogoSign';
+import Scrollbar from 'src/components/Scrollbar';
+
+import { SidebarContext } from 'src/contexts/SidebarContext';
 
 const SidebarWrapper = styled(Box)(
   ({ theme }) => `
@@ -42,9 +43,9 @@ function Sidebar() {
             xs: 'none',
             lg: 'inline-block'
           },
-          position: 'fixed',
-          left: 0,
           top: 0,
+          left: 0,
+          position: 'fixed',
           background:
             theme.palette.mode === 'dark'
               ? alpha(lighten(theme.header.background, 0.1), 0.5)
@@ -78,19 +79,17 @@ function Sidebar() {
             background: theme.colors.alpha.trueWhite[10]
           }}
         />
-        <Box p={2}>
-     
-        </Box>
+        <Box p={2}></Box>
       </SidebarWrapper>
       <Drawer
         sx={{
           boxShadow: `${theme.sidebar.boxShadow}`
         }}
-        anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+        elevation={9}
+        variant="temporary"
         open={sidebarToggle}
         onClose={closeSidebar}
-        variant="temporary"
-        elevation={9}
+        anchor={theme.direction === 'rtl' ? 'right' : 'left'}
       >
         <SidebarWrapper
           sx={{

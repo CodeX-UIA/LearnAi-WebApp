@@ -1,18 +1,10 @@
-import {
-  Typography,
-  Box,
-  Card,
-  Button,
-  Container,
-  styled
-} from '@mui/material';
-import BaseLayout from 'src/layouts/BaseLayout';
+import Head from 'next/head';
+import { Box, Card, Button, styled, Container } from '@mui/material';
 
 import Link from 'src/components/Link';
-import Head from 'next/head';
-
-import Logo from 'src/components/LogoSign';
+import Logo from 'src/components/LogoDark';
 import Hero from 'src/content/Overview/Hero';
+import BaseLayout from 'src/layouts/BaseLayout';
 
 const HeaderWrapper = styled(Card)(
   ({ theme }) => `
@@ -37,25 +29,25 @@ function Overview() {
   return (
     <OverviewWrapper>
       <Head>
-        <title>Tokyo Free White NextJS Javascript Admin Dashboard</title>
+        <title>LearnAI</title>
       </Head>
       <HeaderWrapper>
         <Container maxWidth="lg">
           <Box display="flex" alignItems="center">
             <Logo />
             <Box
+              flex={1}
               display="flex"
               alignItems="center"
               justifyContent="space-between"
-              flex={1}
             >
               <Box />
               <Box>
                 <Button
-                  component={Link}
-                  href="/school/dashboards/crypto"
-                  variant="contained"
                   sx={{ ml: 2 }}
+                  component={Link}
+                  variant="contained"
+                  href="/school/dashboard"
                 >
                   Live Preview
                 </Button>
@@ -65,7 +57,6 @@ function Overview() {
         </Container>
       </HeaderWrapper>
       <Hero />
-    
     </OverviewWrapper>
   );
 }
