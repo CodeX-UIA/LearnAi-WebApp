@@ -9,7 +9,7 @@ import {
   linearProgressClasses
 } from '@mui/material';
 
-import { determinate1Keyframes } from './styles';
+import { determinate1Keyframes, StatButton } from './styles';
 
 function LearningDisabilityStat({ data }) {
   const { name, value, color } = data || {};
@@ -35,27 +35,29 @@ function LearningDisabilityStat({ data }) {
 
   return (
     <ListItem disableGutters>
-      <Grid container spacing={1}>
-        <Grid xs={12} sm={12} item display="flex" alignItems="center">
-          <ListItemText
-            primary={name}
-            primaryTypographyProps={{
-              variant: 'subtitle2',
-              noWrap: true
-            }}
-          />
-          <Box>
-            <Typography align="right" variant="h4" noWrap>
-              {value}%
-            </Typography>
-          </Box>
+      <StatButton sx={{ width: '100%' }}>
+        <Grid container spacing={1}>
+          <Grid xs={12} sm={12} item display="flex" alignItems="center">
+            <ListItemText
+              primary={name}
+              primaryTypographyProps={{
+                variant: 'subtitle2',
+                noWrap: true
+              }}
+            />
+            <Box>
+              <Typography align="right" variant="h4" noWrap>
+                {value}%
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid xs={12} sm={12} item display="flex" alignItems="center">
+            <Box flexGrow={1}>
+              <BorderLinearProgress variant="determinate" value={value} />
+            </Box>
+          </Grid>
         </Grid>
-        <Grid xs={12} sm={12} item display="flex" alignItems="center">
-          <Box flexGrow={1}>
-            <BorderLinearProgress variant="determinate" value={value} />
-          </Box>
-        </Grid>
-      </Grid>
+      </StatButton>
     </ListItem>
   );
 }

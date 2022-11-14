@@ -36,6 +36,12 @@ export const LearnMoreButton = styled(Button)(
 `
 );
 
+export const StatButton = styled(Button)({
+  '&:hover': {
+    background: '#F2F5F9'
+  }
+});
+
 export const AvatarAddWrapper = styled(Avatar)(
   ({ theme }) => `
         background: ${theme.colors.alpha.black[10]};
