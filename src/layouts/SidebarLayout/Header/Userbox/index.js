@@ -75,12 +75,12 @@ function HeaderUserbox() {
           horizontal: 'right'
         }}
       >
-        <MenuUserBox sx={{ minWidth: 210 }} display="flex">
+        <MenuUserBox sx={{ minWidth: 210, height: '100vh' }} display="flex">
           <Avatar variant="rounded" alt={user.name} src={user.avatar} />
           <UserBoxText>
             <UserBoxLabel variant="body1">{user.name}</UserBoxLabel>
             <UserBoxDescription variant="body2">
-              {user.jobtitle}
+              {user.school}
             </UserBoxDescription>
           </UserBoxText>
         </MenuUserBox>

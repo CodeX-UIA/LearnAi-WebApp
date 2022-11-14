@@ -1,11 +1,17 @@
+import React from 'react';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
-import { Box, Grid, List, Button, Divider, Typography } from '@mui/material';
+import { Box, Grid, List, Divider, Typography } from '@mui/material';
 
 import { LearnMoreButton } from './styles';
 import LearningDisabilityStat from './LearningDisabilityStat';
 import LearningDisabilityChart from './LearningDisabilityChart';
+import LearningDisabilityDetailsModal from './LearningDisabilityDetailsModal';
 
 function LearningDisabilityStats() {
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+  const [open, setOpen] = React.useState(false);
+
   const data = [
     {
       name: 'Dyslexia',
@@ -70,12 +76,24 @@ function LearningDisabilityStats() {
               }}
             >
               {data.map((item) => (
-                <LearningDisabilityStat key={item.name} data={item} />
+                <LearningDisabilityStat
+                  open={open}
+                  setOpen={setOpen}
+                  handleOpen={handleOpen}
+                  handleClose={handleClose}
+                  key={item.name}
+                  data={item}
+                />
               ))}
             </List>
           </Grid>
         </Grid>
       </Box>
+      <LearningDisabilityDetailsModal
+        open={open}
+        setOpen={setOpen}
+        handleClose={handleClose}
+      />
     </Grid>
   );
 }

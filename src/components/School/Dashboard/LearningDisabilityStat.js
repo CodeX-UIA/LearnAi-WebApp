@@ -8,10 +8,11 @@ import {
   LinearProgress,
   linearProgressClasses
 } from '@mui/material';
+import React from 'react';
 
 import { determinate1Keyframes, StatButton } from './styles';
 
-function LearningDisabilityStat({ data }) {
+function LearningDisabilityStat({ data, handleOpen }) {
   const { name, value, color } = data || {};
 
   const BorderLinearProgress = styled(LinearProgress)(() => ({
@@ -35,7 +36,7 @@ function LearningDisabilityStat({ data }) {
 
   return (
     <ListItem disableGutters>
-      <StatButton sx={{ width: '100%' }}>
+      <StatButton sx={{ width: '100%' }} onClick={handleOpen}>
         <Grid container spacing={1}>
           <Grid xs={12} sm={12} item display="flex" alignItems="center">
             <ListItemText

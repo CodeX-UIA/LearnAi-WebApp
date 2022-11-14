@@ -3,20 +3,15 @@ import { Container, Grid } from '@mui/material';
 
 import SidebarLayout from 'src/layouts/SidebarLayout';
 
+import Footer from 'src/components/Footer';
+import PageTitleWrapper from 'src/components/PageTitleWrapper';
+
 import GeneralStats from 'src/components/School/Dashboard/GeneralStats';
 import StudentPerformance from 'src/components/School/Dashboard/StudentPerformance';
 
 import PageHeader from 'src/content/Dashboard/PageHeader';
 
-import Footer from 'src/components/Footer';
-import PageTitleWrapper from 'src/components/PageTitleWrapper';
-
-import Wallets from 'src/content/Dashboard/Crypto/Wallets';
-import WatchList from 'src/content/Dashboard/Crypto/WatchList';
-import AccountBalance from 'src/content/Dashboard/Crypto/AccountBalance';
-import AccountSecurity from 'src/content/Dashboard/Crypto/AccountSecurity';
-
-function DashboardCrypto() {
+function Dashboard() {
   return (
     <>
       <Head>
@@ -46,6 +41,6 @@ function DashboardCrypto() {
   );
 }
 
-DashboardCrypto.getLayout = (page) => <SidebarLayout>{page}</SidebarLayout>;
+Dashboard.getLayout = (page) => <SidebarLayout>{page}</SidebarLayout>;
 
-export default DashboardCrypto;
+export default Dashboard;
