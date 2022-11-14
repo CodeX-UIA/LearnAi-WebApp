@@ -29,11 +29,11 @@ function Footer() {
         >
           Crafted by{' '}
           <Link
-            href="https://bloomui.com"
+            href=""
             target="_blank"
             rel="noopener noreferrer"
           >
-            BloomUI.com
+            CodeX
           </Link>
         </Typography>
       </Box>

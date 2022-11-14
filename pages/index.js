@@ -10,7 +10,7 @@ import BaseLayout from 'src/layouts/BaseLayout';
 
 import Link from 'src/components/Link';
 import Head from 'next/head';
-
+import { useSession, signIn, signOut } from "next-auth/react"
 import Logo from 'src/components/LogoSign';
 import Hero from 'src/content/Overview/Hero';
 
@@ -59,6 +59,9 @@ function Overview() {
                 >
                   Live Preview
                 </Button>
+                
+                <button onClick={() => signIn()}>Sign in</button>
+              
               </Box>
             </Box>
           </Box>
