@@ -1,3 +1,3 @@
 # LearnAi-WebApp
 
-Improving quality of education through AI
+Improving the quality of education through AI
