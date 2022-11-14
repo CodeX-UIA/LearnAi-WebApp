@@ -8,7 +8,7 @@ function StudentPerformance() {
     <Card>
       <Grid spacing={0} container>
         <Grid item xs={12} md={7}>
-          <Box pl={4} pt={4}>
+          <Box pl={4} pr={2} pt={4}>
             <Typography
               sx={{
                 pb: 3

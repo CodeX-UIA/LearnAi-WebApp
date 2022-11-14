@@ -6,14 +6,15 @@ import SidebarLayout from 'src/layouts/SidebarLayout';
 import GeneralStats from 'src/components/School/Dashboard/GeneralStats';
 import StudentPerformance from 'src/components/School/Dashboard/StudentPerformance';
 
+import PageHeader from 'src/content/Dashboard/PageHeader';
+
 import Footer from 'src/components/Footer';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
-import PageHeader from 'src/content/Dashboards/Crypto/PageHeader';
 
-import Wallets from 'src/content/Dashboards/Crypto/Wallets';
-import WatchList from 'src/content/Dashboards/Crypto/WatchList';
-import AccountBalance from 'src/content/Dashboards/Crypto/AccountBalance';
-import AccountSecurity from 'src/content/Dashboards/Crypto/AccountSecurity';
+import Wallets from 'src/content/Dashboard/Crypto/Wallets';
+import WatchList from 'src/content/Dashboard/Crypto/WatchList';
+import AccountBalance from 'src/content/Dashboard/Crypto/AccountBalance';
+import AccountSecurity from 'src/content/Dashboard/Crypto/AccountSecurity';
 
 function DashboardCrypto() {
   return (
