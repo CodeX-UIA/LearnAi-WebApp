@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { LogoWrapper } from './styles';
-import logo from '../../../public/assets/icons/logo.svg';
+import logo from '../../../public/assets/icons/logo-black.svg';
 
 function Logo() {
   return (
