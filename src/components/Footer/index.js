@@ -11,15 +11,13 @@ function Footer() {
     <FooterWrapper className="footer-wrapper">
       <Box
         pb={4}
-        display={{ xs: 'block', md: 'flex' }}
         alignItems="center"
-        textAlign={{ xs: 'center', md: 'left' }}
         justifyContent="space-between"
+        display={{ xs: 'block', md: 'flex' }}
+        textAlign={{ xs: 'center', md: 'left' }}
       >
         <Box>
-          <Typography variant="subtitle1">
-            &copy; 2022 - Tokyo Free White Next.js Javascript Admin Dashboard
-          </Typography>
+          <Typography variant="subtitle1">&copy; 2022 - LearnAI</Typography>
         </Box>
         <Typography
           sx={{

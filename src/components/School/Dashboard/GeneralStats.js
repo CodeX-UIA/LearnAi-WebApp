@@ -10,12 +10,12 @@ import GeneralStatCard from './GeneralStatCard';
 function GeneralStats() {
   const data = [
     {
-      value: 350,
+      value: 500,
       icon: <GroupIcon sx={{ color: '#223354' }} />,
       title: 'Students'
     },
     {
-      value: 350,
+      value: 200,
       icon: <SchoolIcon sx={{ color: '#223354' }} />,
       title: 'Teachers'
     },
@@ -25,7 +25,10 @@ function GeneralStats() {
       title: 'School Rank'
     },
     {
-      value: 350,
+      value: '4%',
+      extra: {
+        trending: 'up'
+      },
       icon: <TrendingDownIcon sx={{ color: '#223354' }} />,
       title: 'Dropout Rate'
     }
@@ -34,10 +37,11 @@ function GeneralStats() {
   return (
     <>
       <Grid container spacing={3}>
-        {data.map(({ value, icon, title }) => (
+        {data.map(({ value, icon, title, extra }) => (
           <GeneralStatCard
             key={title}
             icon={icon}
+            extra={extra}
             title={title}
             value={value}
           />
