@@ -26,8 +26,12 @@ function Footer() {
           variant="subtitle1"
         >
           Crafted by{' '}
-          <Link href="/" target="_blank" rel="noopener noreferrer">
-            codeX
+          <Link
+            href=""
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            CodeX
           </Link>
         </Typography>
       </Box>

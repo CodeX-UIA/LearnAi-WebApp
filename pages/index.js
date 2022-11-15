@@ -51,6 +51,9 @@ function Overview() {
                 >
                   Live Preview
                 </Button>
+                
+                <button onClick={() => signIn()}>Sign in</button>
+              
               </Box>
             </Box>
           </Box>
