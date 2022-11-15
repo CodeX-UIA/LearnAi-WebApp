@@ -16,6 +16,10 @@ export default async function handler(req, res) {
       name: req.body.name,
       averageReview:0,
       averageMarks:0,
+      concept:0,
+      understandibility:0,
+      suppportive:0,
+      sentiment:0,
       school:req.body.school
     });
     details.save();

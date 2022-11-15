@@ -18,6 +18,22 @@ const teacherSchema = new mongoose.Schema({
         type:Number,
         required:true
     },
+    concept:{
+        type:Number,
+        required:true
+    },
+    understandibility:{
+        type:Number,
+        required:true
+    },
+    suppportive:{
+        type:Number,
+        required:true
+    },
+    sentiment:{
+        type:Number,
+        required:true
+    },
     school:{
         type:String,
         required:true
