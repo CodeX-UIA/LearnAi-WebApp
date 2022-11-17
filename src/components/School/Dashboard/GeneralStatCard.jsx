@@ -14,7 +14,9 @@ function GeneralStatCard({ icon, title, value, extra }) {
           px: 1
         }}
       >
-        <CardContent>
+        <CardContent
+          sx={{ display: 'flex', flexDirection: 'row', gap: '20px' }}
+        >
           <AvatarWrapper>{icon}</AvatarWrapper>
           <Box
             sx={{
