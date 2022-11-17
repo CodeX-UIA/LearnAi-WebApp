@@ -6,10 +6,9 @@ import SidebarLayout from 'src/layouts/SidebarLayout';
 import Footer from 'src/components/Footer';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 
-import AccountSecurity from 'src/content/Dashboard/Crypto/AccountSecurity';
-
 import Attention from 'src/components/School/Dashboard/Attention';
 import GeneralStats from 'src/components/School/Dashboard/GeneralStats';
+import ClassRankings from 'src/components/School/Dashboard/ClassRankings';
 import StudentPerformance from 'src/components/School/Dashboard/StudentPerformance';
 
 import PageHeader from 'src/content/Dashboard/PageHeader';
@@ -41,7 +40,7 @@ function Dashboard() {
             <Attention />
           </Grid>
           <Grid item lg={4} xs={12}>
-            <AccountSecurity />
+            <ClassRankings />
           </Grid>
         </Grid>
       </Container>

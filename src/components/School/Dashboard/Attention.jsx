@@ -8,53 +8,53 @@ function Attention() {
     students: [
       {
         fullName: 'Isha Kolley',
-        imageUrl: '/static/images/avatar/1.jpg'
+        imageUrl: '/static/images/avatars/2.jpg'
       },
       {
         fullName: 'Binta Sharp',
-        imageUrl: '/static/images/avatar/1.jpg'
+        imageUrl: '/static/images/avatars/4.jpg'
       },
       {
         fullName: 'Bouba Howard',
-        imageUrl: '/static/images/avatar/1.jpg'
+        imageUrl: '/static/images/avatars/3.jpg'
       },
       {
         fullName: 'Morry Baker',
-        imageUrl: '/static/images/avatar/1.jpg'
+        imageUrl: '/static/images/avatars/1.jpg'
       },
       {
         fullName: 'Manny Walker',
-        imageUrl: '/static/images/avatar/1.jpg'
+        imageUrl: '/static/images/avatars/1.jpg'
       },
       {
         fullName: 'Trevor Henderson',
-        imageUrl: '/static/images/avatar/1.jpg'
+        imageUrl: '/static/images/avatars/1.jpg'
       }
     ],
     teachers: [
       {
         fullName: 'Aminata Manneh',
-        imageUrl: '/static/images/avatar/1.jpg'
+        imageUrl: '/static/images/avatars/2.jpg'
       },
       {
         fullName: 'Remy Sharp',
-        imageUrl: '/static/images/avatar/1.jpg'
+        imageUrl: '/static/images/avatars/3.jpg'
       },
       {
         fullName: 'Travis Howard',
-        imageUrl: '/static/images/avatar/1.jpg'
+        imageUrl: '/static/images/avatars/4.jpg'
       },
       {
         fullName: 'Cindy Baker',
-        imageUrl: '/static/images/avatar/1.jpg'
+        imageUrl: '/static/images/avatars/3.jpg'
       },
       {
         fullName: 'Agnes Walker',
-        imageUrl: '/static/images/avatar/1.jpg'
+        imageUrl: '/static/images/avatars/1.jpg'
       },
       {
         fullName: 'Trevor Henderson',
-        imageUrl: '/static/images/avatar/1.jpg'
+        imageUrl: '/static/images/avatars/1.jpg'
       }
     ]
   };
