@@ -101,7 +101,12 @@ function PerformanceChart() {
       justifyContent="center"
     >
       <Grid xs={12}>
-        <Chart options={chartOptions} series={data} type="area" height={300} />
+      <iframe style={{background: "#21313C",border: "none",borderRadius: "2px",boxShadow:" 0 2px 10px 0 rgba(70, 76, 79, .2)"}} width="640" height="480" src="https://charts.mongodb.com/charts-sih-tdvlv/embed/charts?id=6375ddf9-ed9b-4d9b-872c-5277678674f0&maxDataAge=3600&theme=dark&autoRefresh=true"></iframe>
+        {/* <tableau-viz id="tableauViz"       
+  	src='https://public.tableau.com/shared/6Z63RT4NW?:display_count=n&:origin=viz_share_link'      
+ 	  toolbar="bottom" hide-tabs>
+		</tableau-viz> */}
+        {/* <Chart options={chartOptions} series={data} type="area" height={300} /> */}
       </Grid>
     </Grid>
   );

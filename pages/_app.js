@@ -31,6 +31,7 @@ function TokyoApp({Component, emotionCache = clientSideEmotionCache,pageProps: {
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"
         />
+        <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.1.0.js"></script>
       </Head>
       <SidebarProvider>
         <ThemeProvider>
