@@ -8,14 +8,14 @@ const Protected = () => {
 	return <div>
 
 		<h1>Protected Page</h1>
-		{/* <div> */}
-			<iframe src="https://charts.mongodb.com/charts-sih-tdvlv/embed/charts?id=6375ddf9-ed9b-4d9b-872c-5277678674f0&maxDataAge=3600&theme=light&autoRefresh=true"></iframe>
+		{/* <div style={{height:"100vh"}}> */}
+		{/* <iframe style={{background: "#21313C",border: "none",borderRadius: "2px",boxShadow: "0 2px 10px 0 rgba(70, 76, 79, .2)"}}  src="https://charts.mongodb.com/charts-sih-tdvlv/embed/dashboards?id=6375dc87-ed9b-4146-80ed-527767857abe&theme=dark&autoRefresh=true&maxDataAge=3600&showTitleAndDesc=false&scalingWidth=scale&scalingHeight=scale"></iframe> */}
 			{/* </div> */}
 		{/* <iframe style="background: #FFFFFF;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);" width="640" height="480" src="https://charts.mongodb.com/charts-sih-tdvlv/embed/charts?id=6375ddf9-ed9b-4d9b-872c-5277678674f0&maxDataAge=3600&theme=light&autoRefresh=true"></iframe> */}
-	{/* <tableau-viz id="tableauViz"       
-  	src='https://public.tableau.com/shared/6Z63RT4NW?:display_count=n&:origin=viz_share_link'      
+	<tableau-viz id="tableauViz"       
+  	src='https://public.tableau.com/shared/KK6B93YDW?:toolbar=n&:display_count=n&:origin=viz_share_link'      
  	 device="desktop" toolbar="bottom" hide-tabs>
-		</tableau-viz> */}
+		</tableau-viz>
 	</div>
 	
 	// const { push } = useRouter()
