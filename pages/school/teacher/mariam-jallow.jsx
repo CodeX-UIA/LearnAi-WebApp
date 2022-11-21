@@ -4,13 +4,11 @@ import Head from 'next/head';
 import Footer from 'src/components/Footer';
 import SidebarLayout from 'src/layouts/SidebarLayout';
 
-import RecentActivity from 'src/content/Management/Users/details/RecentActivity';
-import Feed from 'src/content/Management/Users/details/Feed';
-import PopularTags from 'src/content/Management/Users/details/PopularTags';
-import MyCards from 'src/content/Management/Users/details/MyCards';
-import Addresses from 'src/content/Management/Users/details/Addresses';
-
+import Classes from 'src/components/School/Teacher/Classes';
 import ProfileCover from 'src/components/School/Teacher/ProfileCover';
+import AttentionCard from 'src/components/School/Teacher/AttentionCard';
+import RecentActivity from 'src/components/School/Teacher/RecentActivity';
+import PopularTags from 'src/content/Management/Users/details/PopularTags';
 
 function ManagementUserProfile() {
   const user = {
@@ -23,7 +21,12 @@ function ManagementUserProfile() {
     jobtitle: 'Teacher',
     location: 'Manjai Kunda, Gambia',
     experience: '15 years',
-    reviews: 56
+    reviews: 56,
+    engagement: 2.3,
+    impression: {
+      thisMonth: 3.4,
+      lastMonth: 3.9
+    }
   };
 
   return (
@@ -32,6 +35,11 @@ function ManagementUserProfile() {
         <title>Teacher - Profile</title>
       </Head>
       <Container sx={{ mt: 3 }} maxWidth="lg">
+        {user?.impression?.thisMonth <= user?.impression?.lastMonth && (
+          <Grid item xs={12} mb={4}>
+            <AttentionCard user={user} />
+          </Grid>
+        )}
         <Grid
           container
           direction="row"
@@ -43,19 +51,15 @@ function ManagementUserProfile() {
             <ProfileCover user={user} />
           </Grid>
           <Grid item xs={12} md={4}>
-            <RecentActivity />
+            <Grid item xs={12}>
+              <RecentActivity user={user} />
+            </Grid>
           </Grid>
           <Grid item xs={12} md={8}>
-            <Feed />
+            <Classes user={user} />
           </Grid>
           <Grid item xs={12} md={4}>
             <PopularTags />
-          </Grid>
-          <Grid item xs={12} md={7}>
-            <MyCards />
-          </Grid>
-          <Grid item xs={12} md={5}>
-            <Addresses />
           </Grid>
         </Grid>
       </Container>
