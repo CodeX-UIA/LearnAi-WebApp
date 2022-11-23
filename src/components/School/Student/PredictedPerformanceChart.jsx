@@ -3,10 +3,10 @@ import { Grid, useTheme } from '@mui/material';
 
 import { Chart } from 'src/components/Chart';
 
-function PerformanceChart() {
+function PredictedPerformanceChart() {
   const theme = useTheme();
 
-  const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
+  const labels = ["Term1 22'", "Term2 22'", "Term3 22'"];
 
   const chartOptions = {
     chart: {
@@ -107,4 +107,4 @@ function PerformanceChart() {
   );
 }
 
-export default PerformanceChart;
+export default PredictedPerformanceChart;

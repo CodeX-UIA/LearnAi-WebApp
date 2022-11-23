@@ -47,7 +47,7 @@ const Header = () => {
   const data1 = data.splice(0, 3);
 
   return (
-    <Card sx={{ mb: 2 }}>
+    <Card sx={{ mb: 4 }}>
       <Box
         sx={{
           gap: 2,

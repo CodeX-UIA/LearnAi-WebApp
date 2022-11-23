@@ -336,7 +336,11 @@ const StudentsTable = () => {
                         color="inherit"
                         size="small"
                       >
-                        <VisibilityTwoToneIcon fontSize="small" />
+                        <Link
+                          href={`/school/student/${studentDetail?.studentID}`}
+                        >
+                          <VisibilityTwoToneIcon fontSize="small" />
+                        </Link>
                       </IconButton>
                     </Tooltip>
                   </TableCell>

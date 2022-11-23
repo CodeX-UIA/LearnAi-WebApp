@@ -1,12 +1,12 @@
 import React from 'react';
-import { Box, Card, Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 import { AvatarWrapper } from './styles';
 
 const HeaderCard = ({ data }) => {
   const { value, title, icon } = data;
   return (
-    <Card
+    <Box
       sx={{
         gap: 2,
         paddingX: 3,
@@ -16,8 +16,7 @@ const HeaderCard = ({ data }) => {
         display: 'flex',
         boxShadow: 'none',
         flexDirection: 'row',
-        alignItems: 'center',
-        borderRight: '1px solid #E9EAED'
+        alignItems: 'center'
       }}
     >
       <AvatarWrapper>{icon}</AvatarWrapper>
@@ -27,7 +26,7 @@ const HeaderCard = ({ data }) => {
           {value}
         </Typography>
       </Box>
-    </Card>
+    </Box>
   );
 };
 
