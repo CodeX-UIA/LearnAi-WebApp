@@ -1,16 +1,25 @@
-import { Grid, Container } from '@mui/material';
+import {
+  Box,
+  Grid,
+  Tooltip,
+  Container,
+  IconButton,
+  Typography
+} from '@mui/material';
 
 import Head from 'next/head';
-import Footer from 'src/components/Footer';
-import SidebarLayout from 'src/layouts/SidebarLayout';
+import ArrowBackTwoToneIcon from '@mui/icons-material/ArrowBackTwoTone';
 
+import SidebarLayout from 'src/layouts/SidebarLayout';
+import PopularTags from 'src/content/Management/Users/details/PopularTags';
+
+import Footer from 'src/components/Footer';
 import Classes from 'src/components/School/Teacher/Classes';
 import ProfileCover from 'src/components/School/Teacher/ProfileCover';
 import AttentionCard from 'src/components/School/Teacher/AttentionCard';
 import RecentActivity from 'src/components/School/Teacher/RecentActivity';
-import PopularTags from 'src/content/Management/Users/details/PopularTags';
 
-function ManagementUserProfile() {
+function Teacher() {
   const user = {
     savedCards: 7,
     name: 'Malick Jallow',
@@ -34,12 +43,21 @@ function ManagementUserProfile() {
       <Head>
         <title>Teacher - Profile</title>
       </Head>
-      <Container sx={{ mt: 3 }} maxWidth="lg">
-        {user?.impression?.thisMonth <= user?.impression?.lastMonth && (
-          <Grid item xs={12} mb={4}>
-            <AttentionCard user={user} />
-          </Grid>
-        )}
+      <Container sx={{ mt: 0 }}>
+        <Grid item xs={12} mb={2} mt={2}>
+          <Box display="flex" alignItems="center" mb={3}>
+            <Tooltip arrow placement="top" title="Go back">
+              <IconButton color="primary" sx={{ p: 2, mr: 2 }}>
+                <ArrowBackTwoToneIcon />
+              </IconButton>
+            </Tooltip>
+            <Box>
+              <Typography variant="h3" component="h3" gutterBottom>
+                Profile
+              </Typography>
+            </Box>
+          </Box>
+        </Grid>
         <Grid
           container
           direction="row"
@@ -47,6 +65,11 @@ function ManagementUserProfile() {
           alignItems="stretch"
           spacing={3}
         >
+          {user?.impression?.thisMonth <= user?.impression?.lastMonth && (
+            <Grid item xs={12} mb={4}>
+              <AttentionCard user={user} />
+            </Grid>
+          )}
           <Grid item xs={12} md={8}>
             <ProfileCover user={user} />
           </Grid>
@@ -68,8 +91,6 @@ function ManagementUserProfile() {
   );
 }
 
-ManagementUserProfile.getLayout = (page) => (
-  <SidebarLayout>{page}</SidebarLayout>
-);
+Teacher.getLayout = (page) => <SidebarLayout>{page}</SidebarLayout>;
 
-export default ManagementUserProfile;
+export default Teacher;

@@ -81,18 +81,6 @@ const CardCoverAction = styled(Box)(
 const ProfileCover = ({ user }) => {
   return (
     <>
-      <Box display="flex" alignItems="center" mb={3}>
-        <Tooltip arrow placement="top" title="Go back">
-          <IconButton color="primary" sx={{ p: 2, mr: 2 }}>
-            <ArrowBackTwoToneIcon />
-          </IconButton>
-        </Tooltip>
-        <Box>
-          <Typography variant="h3" component="h3" gutterBottom>
-            Profile
-          </Typography>
-        </Box>
-      </Box>
       <CardCover>
         <CardMedia image={user.coverImg} />
         <CardCoverAction>
