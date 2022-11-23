@@ -7,9 +7,9 @@ const PageTitle = styled(Box)(
 `
 );
 
-const PageTitleWrapper = ({ children }) => {
+const PageTitleWrapper = ({ children, className }) => {
   return (
-    <PageTitle className="MuiPageTitle-wrapper">
+    <PageTitle className={className ?? 'MuiPageTitle-wrapper'}>
       <Container maxWidth="lg">{children}</Container>
     </PageTitle>
   );

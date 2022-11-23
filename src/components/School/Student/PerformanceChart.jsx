@@ -6,7 +6,7 @@ import { Chart } from 'src/components/Chart';
 function PerformanceChart() {
   const theme = useTheme();
 
-  const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
+  const labels = ["Term1 21'", "Term2 21'", "Term3 21'"];
 
   const chartOptions = {
     chart: {
