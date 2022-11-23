@@ -68,6 +68,6 @@ export default async function handler(req, res) {
 
     res.send({ message: "Successfully registered" });
   } catch (err) {
-    res.send({ message: err });
+    res.send({ message: "err" });
   }
 }

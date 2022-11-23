@@ -13,114 +13,147 @@ const studentSchema = new mongoose.Schema({
     teacher:{
         type:String,
         required:true
-    },  
-    race:{
+    }, 
+    Race:{
+        type:String,
+        required:true
+    },
+    school:{
+        tye:String,
+        required:false
+    },
+    sex:{
         type:String,
         required:true
     },
     age:{
-        type:Number,
-        required:true
-    },
-    famSize:{
-        type:Number,
-        required:true
-    },
-    Fedu:{
-        type:Number,
-        required:true
-    },
-    reason:{
-        type:number,
-        required:true
-    },
-    guardian:{
-        type:Number,
-        required:true
-    },
-    traveltime:{
-        type:Number,
-        required:true
-    },
-    studytime:{
-        type:Number,
-        required:true
-    },
-    failures:{
-        type:Number,
-        required:true
-    },
-    famrel:{
-        type:Number,
-        required:true
-    },
-    freetime:{
-        type:Number,
-        required:true
-    },
-    Walc:{
-        type:Number,
-        required:true
-    },
-    health:{
-        type:Number,
-        required:true
-    },
-    G1:{
-        type:Number,
-        required:true
-    },
-    G2:{
-        type:Number,
-        required:true
-    },
-    gender:{
-        type:Number,
-        required:true
-    },
-    absences:{
-        type:Number,
+        type:String,
         required:true
     },
     address:{
-        type:Number,
+        type:String,
+        required:false
+    },
+    famsize:{
+        type:String,
+        required:true
+    },
+    Pstatus:{
+        type:String,
+        required:false
+    },
+    Medu:{
+        type:String,
+        required:true
+    },
+    Fedu:{
+        type:String,
+        required:true
+    },
+    Mjob:{
+        type:String,
+        required:true
+    },
+    Fjob:{
+        type:String,
+        required:true
+    },
+    reason:{
+        type:String,
+        required:true
+    },
+    guardian:{
+        type:String,
+        required:true
+    },
+    traveltime:{
+        type:String,
+        required:true
+    },
+    studytime:{
+        type:String,
+        required:true
+    },
+    failures:{
+        type:String,
         required:true
     },
     schoolsup:{
-        type:Number,
+        type:String,
         required:true
     },
     famsup:{
-        type:Number,
+        type:String,
         required:true
     },
     paid:{
-        type:Number,
+        type:String,
         required:true
     },
     activities:{
-        type:Number,
+        type:String,
         required:true
     },
     nursery:{
-        type:Number,
+        type:String,
         required:true
     },
     higher:{
-        type:Number,
+        type:String,
         required:true
     },
     internet:{
-        type:Number,
+        type:String,
         required:true
     },
     romantic:{
-        type:Number,
+        type:String,
         required:true
-    }
+    },
+    famrel:{
+        type:String,
+        required:true
+    },
+    freetime:{
+        type:String,
+        required:true
+    },
+    goout:{
+        type:String,
+        required:true
+    },
+    Dalc:{
+        type:String,
+        required:true
+    },
+    Walc:{
+        type:String,
+        required:true
+    },
+    health:{
+        type:String,
+        required:true
+    },
+    absences:{
+        type:String,
+        required:true
+    },
+    G1:{
+        type:String,
+        required:true
+    },
+    G2:{
+        type:String,
+        required:true
+    },
+    G3:{
+        type:String,
+        required:true
+}
 
 });
 
 
-let student= mongoose.model.student || mongoose.model('student', studentSchema);
-export default student;
+let students = mongoose.models.student || mongoose.model('student', studentSchema);
+
+export default students;
