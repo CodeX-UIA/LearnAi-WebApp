@@ -1,6 +1,7 @@
 import React from 'react';
 import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 import {
   Box,
@@ -55,8 +56,10 @@ const SetProfileForm = ({}) => {
     setValue(event.target.name, event.target.value);
   };
 
-  const onSubmit = (data) => {
-    console.log('data: ', data);
+  const onSubmit = async(data) => {
+    console.log(data);
+    let da  = await axios.post('http://localhost:3000/api/controller/registerstudent' , {data});
+    console.log(da);
   };
 
   return (
@@ -80,35 +83,19 @@ const SetProfileForm = ({}) => {
             justifyContent: 'space-between'
           }}
         >
+
           <Box sx={{ width: '100%' }}>
             <Typography sx={{ fontSize: '16px', marginBottom: 1 }}>
-              First Name
+              Name
             </Typography>
             <Controller
-              id="firstName"
-              name="firstName"
+              id="name"
+              name="name"
               control={control}
               render={({ field }) => (
                 <TextField
                   sx={{ width: '100%' }}
-                  placeholder="First Name"
-                  {...field}
-                />
-              )}
-            />
-          </Box>
-          <Box sx={{ width: '100%' }}>
-            <Typography sx={{ fontSize: '16px', marginBottom: 1 }}>
-              Last Name
-            </Typography>
-            <Controller
-              id="lastName"
-              name="lastName"
-              control={control}
-              render={({ field }) => (
-                <TextField
-                  sx={{ width: '100%' }}
-                  placeholder="Last Name"
+                  placeholder="Name"
                   {...field}
                 />
               )}
@@ -127,16 +114,16 @@ const SetProfileForm = ({}) => {
         >
           <Box sx={{ width: '100%' }}>
             <Typography sx={{ fontSize: '16px', marginBottom: 1 }}>
-              Date Of Birth
+              Age
             </Typography>
             <Controller
-              id="dob"
-              name="dob"
+              id="Age"
+              name="Age"
               control={control}
               render={({ field }) => (
                 <TextField
                   sx={{ width: '100%' }}
-                  placeholder="Date Of Birth"
+                  placeholder="Age"
                   {...field}
                 />
               )}
@@ -147,25 +134,25 @@ const SetProfileForm = ({}) => {
               Gender
             </Typography>
             <Controller
-              id="gender"
-              name="gender"
+              id="sex"
+              name="sex"
               control={control}
               render={({ field }) => (
                 <FormControl fullWidth {...field}>
                   <InputLabel id="type_label">Select..</InputLabel>
                   <Select
                     multiline
-                    name="gender"
+                    name="sex"
                     value={gender}
-                    label="Gender"
+                    label="sex"
                     labelId="gender_label"
                     sx={{ textAlign: 'left' }}
                     onChange={handleGenderChange}
                   >
-                    <MenuItem key="male" value="male">
+                    <MenuItem key="male" value="M">
                       Male
                     </MenuItem>
-                    <MenuItem key="female" value="female">
+                    <MenuItem key="female" value="F">
                       Female
                     </MenuItem>
                   </Select>
@@ -202,27 +189,6 @@ const SetProfileForm = ({}) => {
               )}
             />
           </Box>
-          <Box sx={{ width: '100%' }}>
-            <Typography sx={{ fontSize: '16px', marginBottom: 1 }}>
-              Family Size
-            </Typography>
-            <Controller
-              id="familysize"
-              name="familysize"
-              control={control}
-              render={({ field }) => (
-                <TextField
-                  sx={{ width: '100%' }}
-                  type="number"
-                  InputLabelProps={{
-                    shrink: true
-                  }}
-                  placeholder="Family Size"
-                  {...field}
-                />
-              )}
-            />
-          </Box>
         </Box>
         <Box
           sx={{
@@ -253,16 +219,16 @@ const SetProfileForm = ({}) => {
                     sx={{ textAlign: 'left' }}
                     onChange={handleRaceChange}
                   >
-                    <MenuItem key="male" value="T">
+                    <MenuItem key="Black" value="Black">
                       Black
                     </MenuItem>
-                    <MenuItem key="female" value="A">
+                    <MenuItem key="White" value="White">
                       White
                     </MenuItem>
-                    <MenuItem key="female" value="A">
+                    <MenuItem key="Asian" value="Asian">
                       Asian
                     </MenuItem>
-                    <MenuItem key="female" value="A">
+                    <MenuItem key="Other" value="Other">
                       Other
                     </MenuItem>
                   </Select>
@@ -375,16 +341,16 @@ const SetProfileForm = ({}) => {
                     sx={{ textAlign: 'left' }}
                     onChange={handleMeduChange}
                   >
-                    <MenuItem key="male" value="T">
+                    <MenuItem key="0" value="0">
                       Below High School
                     </MenuItem>
-                    <MenuItem key="female" value="A">
+                    <MenuItem key="1" value="1">
                       High School Diploma
                     </MenuItem>
-                    <MenuItem key="female" value="A">
+                    <MenuItem key="2" value="2">
                       Undergraduate
                     </MenuItem>
-                    <MenuItem key="female" value="A">
+                    <MenuItem key="3" value="3">
                       Graduate
                     </MenuItem>
                   </Select>
@@ -411,16 +377,16 @@ const SetProfileForm = ({}) => {
                     sx={{ textAlign: 'left' }}
                     onChange={handleFeduChange}
                   >
-                    <MenuItem key="male" value="T">
+                    <MenuItem key="0" value="0">
                       Below High School
                     </MenuItem>
-                    <MenuItem key="female" value="A">
+                    <MenuItem key="1" value="1">
                       High School Diploma
                     </MenuItem>
-                    <MenuItem key="female" value="A">
+                    <MenuItem key="2" value="2">
                       Undergraduate
                     </MenuItem>
-                    <MenuItem key="female" value="A">
+                    <MenuItem key="3" value="3">
                       Graduate
                     </MenuItem>
                   </Select>
