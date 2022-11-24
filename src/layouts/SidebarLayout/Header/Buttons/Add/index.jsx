@@ -34,11 +34,11 @@ const Add = () => {
     setModalOpen(false);
   };
   const handleTModalOpen = () => {
-    setModalOpen(true);
+    setTModalOpen(true);
     handleClose();
   };
   const handleTModalClose = () => {
-    setModalOpen(false);
+    setTModalOpen(false);
   };
 
   return (
@@ -75,7 +75,7 @@ const Add = () => {
               Add Student
             </Typography>
           </Button>
-          <Button sx={{ borderRadius: 0 }} onClick={handleModalOpen}>
+          <Button sx={{ borderRadius: 0 }} onClick={handleTModalOpen}>
             <Typography
               variant="body"
               sx={{ p: 1, color: '#646F87', fontWeight: 400 }}
