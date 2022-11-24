@@ -16,7 +16,6 @@ export default async function handler(req, res) {
     name:req.body.name,
     teacher:"harsh", 
     Race:"Asian",
-    school:req.body.school,
     sex:req.body.sex,
     age:req.body.age,
     address:req.body.address,

@@ -8,7 +8,7 @@ const Protected = () => {
 	return <div>
 
 		<h1>Protected Page</h1>
-
+	
 	<tableau-viz id="tableauViz"       
   	src='https://public.tableau.com/views/enrollment_16692060529060/DIstrictPopChange?:language=en-GB&:display_count=n&:origin=viz_share_link'      
  	 device="desktop" toolbar="bottom" hide-tabs>

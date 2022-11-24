@@ -4,29 +4,13 @@ import users from "../model/userSchema";
 
 connectDB();
 
-export const findweakstudents=async(req,res)=>{
+export default async function handler(req,res){
     const a=[];
     try{ 
-         student.find({$expr:{$lt:["$Grade1", "$Grade2"]}}).then(
+         student.find({$expr:{$lt:["$G1", "$G2"]}}).then(
                 async(user)=>{
-                    const da= await axios({
-                        method: "post",
-                        url: `http://localhost:8000`,
-                        withCredentials: true, 
-                        //credentials: 'include',
-                        headers: {
-                          "Content-Type": "application/json",
-                        },
-                        data:user
-                      })
-                      console.log(da)
                     if(user){
-                        user.map((item,index)=>{
-                    
-                          student.findOneAndUpdate({_id:item._id},{$set:{G3:da.data[index]}} )
-                        })
-                   
-                        return res.json({message:a})
+                        return res.json(user)
                     }
                     else{
                         return res.json({error:"Try Again Later!"})

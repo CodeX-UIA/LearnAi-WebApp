@@ -22,13 +22,19 @@ export default async function handler(req,res){
                         data:user
                       })
                       console.log(da)
+                      // res.status(200).json(da)
+                      // res.status(200).json(user)
                     if(user){
-                        user.map((item,index)=>{
-                    
-                          student.findOneAndUpdate({_id:item._id},{$set:{G3:da.data[index]}} )
+                      user.map((item,index)=>{
+                          console.log("hello")
+                          console.log(da.data[index][0])
+
+                           student.findOneAndUpdate({_id:item._id},{$set:{G3:da.data[index][0]}},{ returnDocument: 'after' } ).then((user)=>{
+                            console.log(user)
                         })
+                      })
                    
-                        return res.json({message:a})
+                        return res.json({message:"success"})
                     }
                     else{
                         return res.json({error:"Try Again Later!"})
@@ -39,7 +45,7 @@ export default async function handler(req,res){
     }
      catch(err){
             console.log(err);
-            return res.json({error:err})
+            return res.json({error:"query failed"})
      }
 }
 
