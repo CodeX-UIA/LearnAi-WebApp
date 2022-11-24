@@ -10,32 +10,32 @@ export default async function handler(req, res) {
     //     return res.send({message:"A user with this email id already exists"});
     // }
     // console.log(check1);
-    console.log(req.body);
+    console.log(req.body.data.amenities);
     const details = new school({
-      email:req.body.email,
-      schoolName:req.body.schoolName,
-      schoolID:req.body.schoolID,
-      type:req.body.type,
-      language:req.body.language,
-      phone:req.body.phone,
-      address:req.body.address,
-      assemblyArea:req.body.amenities.assemblyArea,
-      auditorium:req.body.amenities.auditorium,
-      cafeteria:req.body.amenities.cafeteria,
-      electricity:req.body.amenities.electricity,
-      furniture:req.body.amenities.furniture,
-      libraries:req.body.amenities.libraries,
-      sanitation:req.body.amenities.sanitation,
-      scienceLabs:req.body.amenities.scienceLabs,
-      sportsFacilities:req.body.amenities.sportsFacilities,
-      water:req.body.amenities.water,
-      english:req.body.courses.english,
-      literature:req.body.courses.literature,
-      maths:req.body.courses.maths,
-      science:req.body.courses.science,
-      socialScience:req.body.courses.socialScience,
-      enrolledStudents:req.body.enrolledStudents,
-      amenitiesRating:req.body.amenitiesRating,
+      email:req.body.data.email,
+      schoolName:req.body.data.schoolName,
+      schoolID:req.body.data.schoolID,
+      type:req.body.data.type,
+      language:req.body.data.language,
+      phone:req.body.data.phone,
+      address:req.body.data.address,
+      assemblyArea:req.body.data.amenities.assemblyArea,
+      auditorium:req.body.data.amenities.auditorium,
+      cafeteria:req.body.data.amenities.cafeteria,
+      electricity:req.body.data.amenities.electricity,
+      furniture:req.body.data.amenities.furniture,
+      libraries:req.body.data.amenities.libraries,
+      sanitation:req.body.data.amenities.sanitation,
+      scienceLabs:req.body.data.amenities.scienceLabs,
+      sportsFacilities:req.body.data.amenities.sportsFacilities,
+      water:req.body.data.amenities.water,
+      english:req.body.data.courses.english,
+      literature:req.body.data.courses.literature,
+      maths:req.body.data.courses.maths,
+      science:req.body.data.courses.science,
+      socialScience:req.body.data.courses.socialScience,
+      enrolledStudents:req.body.data.enrolledStudents,
+      amenitiesRating:req.body.data.amenitiesRating,
       teachers:0,
       enrolledStudents:0,
       averageMarks:0,
@@ -55,6 +55,6 @@ export default async function handler(req, res) {
 
     res.send({ message: "Successfully registered" });
   } catch (err) {
-    res.send({ message: err});
+    res.status(500).send({ message: "Error" });
   }
 }

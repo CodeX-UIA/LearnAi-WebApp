@@ -4,6 +4,7 @@ import { Box, Button } from '@mui/material';
 
 import InputGroup1 from './InputGroup1';
 import InputGroup2 from './InputGroup2';
+import axios from 'axios';
 
 const SetProfileForm = ({ activeSet, setActive }) => {
   const [type, setType] = React.useState('');
@@ -70,7 +71,13 @@ const SetProfileForm = ({ activeSet, setActive }) => {
     });
   };
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = async(data) => {
+    console.log(data);
+    let da = await axios.post('http://localhost:3000/api/controller/registerschool', {
+      data
+    });
+    console.log(da);
+  };
 
   const schoolTypes = [
     {
