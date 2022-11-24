@@ -47,11 +47,11 @@ export default async function handler(req, res) {
     details.save();
     // res.json(req.body.amenities.furniture);
 
-  //   const use=new users({
-  //     email:req.body.email,
-  //     role:req.body.role
-  // })
-  // use.save()
+    const use=new users({
+      email:req.body.email,
+      role:"school"
+  })
+  use.save()
 
     res.send({ message: "Successfully registered" });
   } catch (err) {
