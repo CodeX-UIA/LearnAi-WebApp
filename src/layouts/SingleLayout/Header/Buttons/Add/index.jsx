@@ -9,7 +9,7 @@ import {
   Divider,
   Button
 } from '@mui/material';
-import AddStudentModal from 'src/components/School/Forms/AddStudent/AddStudentModal';
+import AddStudentModal from 'src/components/School/Forms/AddSchool/AddSchoolModal';
 
 const Add = () => {
   const ref = useRef(null);

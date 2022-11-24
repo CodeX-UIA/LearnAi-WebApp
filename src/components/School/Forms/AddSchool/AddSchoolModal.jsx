@@ -5,7 +5,7 @@ import Button from '@mui/material/Button';
 
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 
-import SetProfileForm from './AddStudentForm';
+import SetProfileForm from './AddSchoolForm';
 
 const style = {
   position: 'absolute',
@@ -21,7 +21,7 @@ const style = {
   pb: 3
 };
 
-export default function AddStudentModal({ open, handleModalClose }) {
+export default function AddSchoolModal({ open, handleModalClose }) {
   return (
     <React.Fragment>
       <Modal
@@ -39,7 +39,7 @@ export default function AddStudentModal({ open, handleModalClose }) {
               justifyContent: 'space-between'
             }}
           >
-            <h2 id="child-modal-title">Add Student</h2>
+            <h2 id="child-modal-title">Add School</h2>
             <Button onClick={handleModalClose}>
               <CloseTwoToneIcon />
             </Button>
