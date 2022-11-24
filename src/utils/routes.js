@@ -41,6 +41,12 @@ const routes = [
     icon: <GroupIcon />
   },
   {
+    name: 'Student Analytics',
+    sidebarContent: true,
+    path: '/school/analytics',
+    icon: <GroupIcon />
+  },
+  {
     name: 'Subjects',
     sidebarContent: true,
     path: '/school/subjects',
