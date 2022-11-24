@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Avatar, Box, Typography } from '@mui/material';
 
-import SetProfileForm from 'src/components/SetProfile/SetProfileForm';
+import SetProfileForm from 'src/components/SetProfileDistrict/SetProfileForm';
 
 import Logo from './Logo/index';
 
