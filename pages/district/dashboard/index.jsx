@@ -6,14 +6,13 @@ import SidebarLayout from 'src/layouts/SidebarLayout';
 import Footer from 'src/components/Footer';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 
-import Attention from 'src/components/School/Dashboard/Attention';
-import GeneralStats from 'src/components/School/Dashboard/GeneralStats';
-import ClassRankings from 'src/components/School/Dashboard/ClassRankings';
-import StudentPerformance from 'src/components/School/Dashboard/StudentPerformance';
+import Attention from 'src/components/District/Dashboard/Attention';
+import GeneralStats from 'src/components/District/Dashboard/GeneralStats';
+import ClassRankings from 'src/components/District/Dashboard/ClassRankings';
+import StudentPerformance from 'src/components/District/Dashboard/StudentPerformance';
 
-import PageHeader from 'src/content/Dashboard/PageHeader';
-import SingleLayout from 'src/layouts/SingleLayout';
 import DistrictSidebarLayout from 'src/layouts/DistrictSidebarLayout';
+import PageHeader from 'src/components/District/Dashboard/PageHeader';
 
 function Dashboard() {
   return (
