@@ -61,7 +61,7 @@ function GeneralStats() {
   ];
 
   return (
-    <Card>
+    <>
       <Grid container spacing={0}>
         {data.map(({ value, icon, title, extra }) => (
           <GeneralStatCard
@@ -73,7 +73,7 @@ function GeneralStats() {
           />
         ))}
       </Grid>
-    </Card>
+    </>
   );
 }
 

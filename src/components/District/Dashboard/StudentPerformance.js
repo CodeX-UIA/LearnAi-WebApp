@@ -1,7 +1,7 @@
 import { Box, Grid, Card, Typography } from '@mui/material';
 
 import PerformanceChart from './PerformanceChart';
-import LearningDisabilityStats from './LearningDisabilityStats';
+import LearningDisabilityStats from './GoalComparisonStat';
 
 function StudentPerformance() {
   return (

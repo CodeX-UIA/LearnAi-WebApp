@@ -5,7 +5,6 @@ import { Box, Grid, List, Divider, Typography } from '@mui/material';
 import { LearnMoreButton } from './styles';
 import LearningDisabilityStat from './LearningDisabilityStat';
 import LearningDisabilityChart from './LearningDisabilityChart';
-import LearningDisabilityDetailsModal from './LearningDisabilityDetailsModal';
 
 function GoalComparisonStat() {
   const handleOpen = () => setOpen(true);
@@ -56,7 +55,7 @@ function GoalComparisonStat() {
             sx={{ width: '100%', pb: 3, pl: 4 }}
           >
             <Typography sx={{}} variant="h4">
-              District Goals Achievement
+              District Goal Achievement
             </Typography>
             <LearnMoreButton size="small" variant="text">
               <MoreHorizIcon />
@@ -84,11 +83,6 @@ function GoalComparisonStat() {
           </Grid>
         </Grid>
       </Box>
-      <LearningDisabilityDetailsModal
-        open={open}
-        setOpen={setOpen}
-        handleClose={handleClose}
-      />
     </Grid>
   );
 }
