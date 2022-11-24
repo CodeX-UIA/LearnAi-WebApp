@@ -74,9 +74,7 @@ function Teacher() {
             <ProfileCover user={user} />
           </Grid>
           <Grid item xs={12} md={4}>
-            <Grid item xs={12}>
-              <RecentActivity user={user} />
-            </Grid>
+            <RecentActivity user={user} />
           </Grid>
           <Grid item xs={12} md={8}>
             <Classes user={user} />
