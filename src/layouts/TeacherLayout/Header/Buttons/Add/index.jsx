@@ -63,7 +63,7 @@ const Add = () => {
               variant="body"
               sx={{ p: 1, color: '#646F87', fontWeight: 400 }}
             >
-              Add School
+              Add Mark
             </Typography>
           </Button>
         </Box>
