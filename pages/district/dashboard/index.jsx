@@ -13,6 +13,7 @@ import StudentPerformance from 'src/components/District/Dashboard/StudentPerform
 
 import DistrictSidebarLayout from 'src/layouts/DistrictSidebarLayout';
 import PageHeader from 'src/components/District/Dashboard/PageHeader';
+import SingleLayout from 'src/layouts/SingleLayout';
 
 function Dashboard() {
   return (
@@ -44,8 +45,6 @@ function Dashboard() {
   );
 }
 
-Dashboard.getLayout = (page) => (
-  <DistrictSidebarLayout>{page}</DistrictSidebarLayout>
-);
+Dashboard.getLayout = (page) => <SingleLayout>{page}</SingleLayout>;
 
 export default Dashboard;
