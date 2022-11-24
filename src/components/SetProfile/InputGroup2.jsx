@@ -7,19 +7,25 @@ import {
   Checkbox,
   InputLabel,
   FormControl,
-  FormControlLabel
+  FormControlLabel,
+  MenuItem
 } from '@mui/material';
 import { Controller } from 'react-hook-form';
 import TextField from '@mui/material/TextField';
 
 const InputGroup2 = ({
+  rating,
   control,
   courses,
   amenities,
   allCourses,
+  safetyRating,
   basicAmenities,
+  amenitiesRating,
+  handleRatingChange,
   handleCoursesChange,
-  handleAmenityChange
+  handleAmenityChange,
+  handleSafetyRatingChange
 }) => {
   const ref = useRef(null);
   const ref2 = useRef(null);
@@ -107,6 +113,60 @@ const InputGroup2 = ({
           ></Select>
         </FormControl>
       </Button>
+      <Controller
+        name="amenitiesRating"
+        control={control}
+        render={({ field }) => (
+          <FormControl fullWidth {...field}>
+            <InputLabel id="type_label">
+              On Scale of 1 - 5 please rate the state of amenities you have in
+              you school
+            </InputLabel>
+            <Select
+              multiline
+              name="amenitiesRating"
+              value={amenitiesRating}
+              label="Amenities Rating"
+              labelId="amenities_label"
+              sx={{ textAlign: 'left' }}
+              onChange={handleRatingChange}
+            >
+              {rating?.map(({ label, value }) => (
+                <MenuItem key={value} value={value}>
+                  {label}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        )}
+      />
+      <Controller
+        name="safety"
+        control={control}
+        render={({ field }) => (
+          <FormControl fullWidth {...field}>
+            <InputLabel id="safety_label">
+              On Scale of 1 - 5 please rate the state of safety of your school,
+              neighborhood, and surroundings
+            </InputLabel>
+            <Select
+              multiline
+              name="safety"
+              value={safetyRating}
+              label="Safety Rating"
+              labelId="safety_label"
+              sx={{ textAlign: 'left' }}
+              onChange={handleSafetyRatingChange}
+            >
+              {rating?.map(({ label, value }) => (
+                <MenuItem key={value} value={value}>
+                  {label}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        )}
+      />
       <Button
         ref={ref2}
         variant="text"
@@ -115,8 +175,7 @@ const InputGroup2 = ({
       >
         <FormControl fullWidth>
           <InputLabel id="infrastructure_label">
-            Select all the facilities available and in good condition in your
-            school
+            Select all the courses the school teaches
           </InputLabel>
           <Select
             sx={{ width: '100%', zIndex: -99, borderColor: '#BBBCBF' }}
@@ -124,7 +183,7 @@ const InputGroup2 = ({
             value=""
             id="infrastructure"
             labelId="infrastructure_label"
-            label="Choose all the facilities available in your school"
+            label="Choose all the courses available in your school"
           ></Select>
         </FormControl>
       </Button>

@@ -37,6 +37,20 @@ const InputGroup1 = ({
         )}
       />
       <Controller
+        id="email"
+        name="email"
+        control={control}
+        render={({ field }) => (
+          <TextField
+            sx={{ width: '100%' }}
+            label="Email"
+            placeholder="Enter school email"
+            multiline
+            {...field}
+          />
+        )}
+      />
+      <Controller
         name="schoolID"
         control={control}
         render={({ field }) => (
@@ -68,7 +82,6 @@ const InputGroup1 = ({
               {schoolTypes?.map(({ label, value }) => (
                 <MenuItem key={value} value={value}>
                   {label}
-                  {value}
                 </MenuItem>
               ))}
             </Select>
