@@ -8,6 +8,9 @@ import InputGroup2 from './InputGroup2';
 const SetProfileForm = ({ activeSet, setActive }) => {
   const [type, setType] = React.useState('');
   const [language, setLanguage] = React.useState('');
+  const [amenitiesRating, setAmenitiesRating] = React.useState();
+  const [safetyRating, setSafetyRating] = React.useState();
+
   const [amenities, setAmenities] = React.useState({
     libraries: false,
     scienceLabs: false,
@@ -33,6 +36,16 @@ const SetProfileForm = ({ activeSet, setActive }) => {
 
   const handleTypeChange = (event) => {
     setType(event.target.value);
+    setValue(event.target.name, event.target.value);
+  };
+
+  const handleRatingChange = (event) => {
+    setAmenitiesRating(event.target.value);
+    setValue(event.target.name, event.target.value);
+  };
+
+  const handleSafetyRatingChange = (event) => {
+    setSafetyRating(event.target.value);
     setValue(event.target.name, event.target.value);
   };
 
@@ -86,6 +99,29 @@ const SetProfileForm = ({ activeSet, setActive }) => {
     {
       label: 'Portuguese',
       value: 'portuguese'
+    }
+  ];
+
+  const rating = [
+    {
+      label: 'Bad (1)',
+      value: '1'
+    },
+    {
+      label: 'Somewhat bad (2)',
+      value: '2'
+    },
+    {
+      label: 'Somewhat good (3)',
+      value: '3'
+    },
+    {
+      label: 'Good (4)',
+      value: '4'
+    },
+    {
+      label: 'Great (5)',
+      value: '5'
     }
   ];
 
@@ -170,6 +206,7 @@ const SetProfileForm = ({ activeSet, setActive }) => {
       ) : (
         <InputGroup2
           type={type}
+          rating={rating}
           courses={courses}
           control={control}
           language={language}
@@ -177,11 +214,15 @@ const SetProfileForm = ({ activeSet, setActive }) => {
           languages={languages}
           allCourses={allCourses}
           schoolTypes={schoolTypes}
+          safetyRating={safetyRating}
           basicAmenities={basicAmenities}
+          amenitiesRating={amenitiesRating}
           handleTypeChange={handleTypeChange}
+          handleRatingChange={handleRatingChange}
           handleCoursesChange={handleCoursesChange}
           handleAmenityChange={handleAmenityChange}
           handleLanguageChange={handleLanguageChange}
+          handleSafetyRatingChange={handleSafetyRatingChange}
         />
       )}
       {activeSet == 2 ? (
