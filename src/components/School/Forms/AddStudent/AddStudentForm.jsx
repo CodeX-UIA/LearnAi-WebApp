@@ -15,8 +15,12 @@ import {
 import { Controller } from 'react-hook-form';
 import TextField from '@mui/material/TextField';
 
+import Switch from '@mui/material/Switch';
+
 const SetProfileForm = ({}) => {
   const router = useRouter();
+
+  const label = { inputProps: { 'aria-label': 'Switch demo' } };
 
   const [medu, setMedu] = React.useState();
   const [Fedu, setFedu] = React.useState();
@@ -424,6 +428,17 @@ const SetProfileForm = ({}) => {
               )}
             />
           </Box>
+        </Box>
+        <Box sx={{ width: '100%' }}>
+          <Typography sx={{ fontSize: '16px', marginBottom: 1 }}>
+            Is the student disabled?
+          </Typography>
+          <Controller
+            id="disabled"
+            name="disabled"
+            control={control}
+            render={({ field }) => <Switch {...label} {...field} />}
+          />
         </Box>
         <Box
           sx={{
