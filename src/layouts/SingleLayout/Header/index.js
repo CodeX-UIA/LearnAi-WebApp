@@ -18,6 +18,7 @@ import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
 import HeaderButtons from './Buttons';
 import HeaderUserbox from './Userbox';
 import HeaderMenu from './Menu';
+import Logo from 'src/components/LogoDark';
 
 const HeaderWrapper = styled(Box)(
   ({ theme }) => `
@@ -31,10 +32,6 @@ const HeaderWrapper = styled(Box)(
         position: fixed;
         justify-content: space-between;
         width: 100%;
-        @media (min-width: ${theme.breakpoints.values.lg}px) {
-            left: ${theme.sidebar.width};
-            width: auto;
-        }
 `
 );
 
@@ -47,6 +44,7 @@ function Header() {
       display="flex"
       alignItems="center"
       sx={{
+        paddingX: 5,
         boxShadow:
           theme.palette.mode === 'dark'
             ? `0 1px 0 ${alpha(
@@ -62,6 +60,9 @@ function Header() {
               )}`
       }}
     >
+      <Box>
+        <Logo />
+      </Box>
       <Stack
         direction="row"
         divider={<Divider orientation="vertical" flexItem />}

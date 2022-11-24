@@ -3,7 +3,7 @@ import { Typography, Avatar, Grid, useTheme } from '@mui/material';
 function PageHeader() {
   const user = {
     name: 'Catherine Pike',
-    avatar: '/static/images/avatars/1.jpg'
+    avatar: '/static/images/placeholders/illustrations/businessman.svg'
   };
   const theme = useTheme();
 
@@ -26,7 +26,8 @@ function PageHeader() {
           Welcome!
         </Typography>
         <Typography variant="subtitle2">
-          Take a look at the performance of students and teachers in your school
+          Take a look at the performance of students and schools in your
+          district
         </Typography>
       </Grid>
     </Grid>

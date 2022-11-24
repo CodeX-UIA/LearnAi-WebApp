@@ -30,9 +30,9 @@ import {
 
 function HeaderUserbox() {
   const user = {
-    name: 'Private School',
+    name: 'District',
     avatar: '/static/images/avatars/1.jpg',
-    school: 'Gambia Methodist Academy'
+    district: 'Uttar Pradesh'
   };
 
   const ref = useRef(null);
@@ -54,7 +54,7 @@ function HeaderUserbox() {
           <UserBoxText>
             <UserBoxLabel variant="body1">{user.name}</UserBoxLabel>
             <UserBoxDescription variant="body2">
-              {user.school}
+              {user.district}
             </UserBoxDescription>
           </UserBoxText>
         </Hidden>
@@ -80,7 +80,7 @@ function HeaderUserbox() {
           <UserBoxText>
             <UserBoxLabel variant="body1">{user.name}</UserBoxLabel>
             <UserBoxDescription variant="body2">
-              {user.school}
+              {user.district}
             </UserBoxDescription>
           </UserBoxText>
         </MenuUserBox>

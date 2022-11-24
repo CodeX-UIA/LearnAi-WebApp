@@ -9,7 +9,7 @@ import {
   Divider,
   Button
 } from '@mui/material';
-import AddStudentModal from 'src/components/School/Forms/AddStudent/AddStudentModal';
+import AddStudentModal from 'src/components/School/Forms/AddSchool/AddSchoolModal';
 
 const Add = () => {
   const ref = useRef(null);
@@ -63,24 +63,7 @@ const Add = () => {
               variant="body"
               sx={{ p: 1, color: '#646F87', fontWeight: 400 }}
             >
-              Add Student
-            </Typography>
-          </Button>
-          <Button sx={{ borderRadius: 0 }}>
-            <Typography
-              variant="body"
-              sx={{ p: 1, color: '#646F87', fontWeight: 400 }}
-            >
-              Add Teacher
-            </Typography>
-          </Button>
-
-          <Button sx={{ borderRadius: 0 }}>
-            <Typography
-              variant="body"
-              sx={{ p: 1, color: '#646F87', fontWeight: 400 }}
-            >
-              Add Course
+              Add School
             </Typography>
           </Button>
         </Box>

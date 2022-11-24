@@ -6,14 +6,14 @@ import SidebarLayout from 'src/layouts/SidebarLayout';
 import Footer from 'src/components/Footer';
 import PageTitleWrapper from 'src/components/PageTitleWrapper';
 
-import Attention from 'src/components/School/Dashboard/Attention';
-import GeneralStats from 'src/components/School/Dashboard/GeneralStats';
-import ClassRankings from 'src/components/School/Dashboard/ClassRankings';
-import StudentPerformance from 'src/components/School/Dashboard/StudentPerformance';
+import Attention from 'src/components/District/Dashboard/Attention';
+import GeneralStats from 'src/components/District/Dashboard/GeneralStats';
+import ClassRankings from 'src/components/District/Dashboard/ClassRankings';
+import StudentPerformance from 'src/components/District/Dashboard/StudentPerformance';
 
-import PageHeader from 'src/content/Dashboard/PageHeader';
-import SingleLayout from 'src/layouts/SingleLayout';
 import DistrictSidebarLayout from 'src/layouts/DistrictSidebarLayout';
+import PageHeader from 'src/components/District/Dashboard/PageHeader';
+import SingleLayout from 'src/layouts/SingleLayout';
 
 function Dashboard() {
   return (
@@ -38,12 +38,6 @@ function Dashboard() {
           <Grid item xs={12}>
             <StudentPerformance />
           </Grid>
-          <Grid item xs={12} lg={8}>
-            <Attention />
-          </Grid>
-          <Grid item lg={4} xs={12}>
-            <ClassRankings />
-          </Grid>
         </Grid>
       </Container>
       <Footer />
@@ -51,8 +45,6 @@ function Dashboard() {
   );
 }
 
-Dashboard.getLayout = (page) => (
-  <DistrictSidebarLayout>{page}</DistrictSidebarLayout>
-);
+Dashboard.getLayout = (page) => <SingleLayout>{page}</SingleLayout>;
 
 export default Dashboard;
