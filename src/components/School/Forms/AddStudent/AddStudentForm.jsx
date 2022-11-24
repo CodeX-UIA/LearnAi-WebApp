@@ -56,9 +56,11 @@ const SetProfileForm = ({}) => {
     setValue(event.target.name, event.target.value);
   };
 
+
   const onSubmit = async(data) => {
     console.log(data);
     let da  = await axios.post('http://localhost:3000/api/controller/registerstudent' , {data});
+
     console.log(da);
   };
 
