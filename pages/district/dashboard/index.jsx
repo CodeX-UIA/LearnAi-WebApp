@@ -37,12 +37,6 @@ function Dashboard() {
           <Grid item xs={12}>
             <StudentPerformance />
           </Grid>
-          <Grid item xs={12} lg={8}>
-            <Attention />
-          </Grid>
-          <Grid item lg={4} xs={12}>
-            <ClassRankings />
-          </Grid>
         </Grid>
       </Container>
       <Footer />

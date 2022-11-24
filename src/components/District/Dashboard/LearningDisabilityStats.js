@@ -7,24 +7,19 @@ import LearningDisabilityStat from './LearningDisabilityStat';
 import LearningDisabilityChart from './LearningDisabilityChart';
 import LearningDisabilityDetailsModal from './LearningDisabilityDetailsModal';
 
-function LearningDisabilityStats() {
+function GoalComparisonStat() {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [open, setOpen] = React.useState(false);
 
   const data = [
     {
-      name: 'Dyslexia',
+      name: 'Goal',
       value: 65,
       color: '#12192A'
     },
     {
-      name: 'ADHD',
-      value: 15,
-      color: '#FF9E2C'
-    },
-    {
-      name: 'Dyscalculia',
+      name: 'Achieved',
       value: 20,
       color: '#5568FF'
     }
@@ -61,7 +56,7 @@ function LearningDisabilityStats() {
             sx={{ width: '100%', pb: 3, pl: 4 }}
           >
             <Typography sx={{}} variant="h4">
-              Students with learning disabilities
+              District Goals Achievement
             </Typography>
             <LearnMoreButton size="small" variant="text">
               <MoreHorizIcon />
@@ -98,4 +93,4 @@ function LearningDisabilityStats() {
   );
 }
 
-export default LearningDisabilityStats;
+export default GoalComparisonStat;

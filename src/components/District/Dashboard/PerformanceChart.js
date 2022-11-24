@@ -6,7 +6,7 @@ import { Chart } from 'src/components/Chart';
 function PerformanceChart() {
   const theme = useTheme();
 
-  const labels = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'];
+  const labels = ['Term1', 'Term2', 'Term3'];
 
   const chartOptions = {
     chart: {
@@ -70,7 +70,7 @@ function PerformanceChart() {
       y: {
         title: {
           formatter() {
-            return 'Average gpa:';
+            return 'Average grade: (%)';
           }
         }
       },
@@ -85,8 +85,8 @@ function PerformanceChart() {
       name: 'Student Performance',
       data: labels.map(() =>
         faker.datatype.number({
-          min: 1,
-          max: 4
+          min: 30,
+          max: 96
         })
       )
     }

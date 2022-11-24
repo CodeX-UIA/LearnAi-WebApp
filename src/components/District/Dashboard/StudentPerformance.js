@@ -15,7 +15,7 @@ function StudentPerformance() {
               }}
               variant="h4"
             >
-              Student Performance
+              School District Performance
             </Typography>
             <PerformanceChart />
           </Box>
