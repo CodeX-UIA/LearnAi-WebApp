@@ -23,7 +23,7 @@ function PageHeader() {
       </Grid>
       <Grid item>
         <Typography variant="h3" component="h3" gutterBottom>
-          Welcome, {user.name}!
+          Welcome!
         </Typography>
         <Typography variant="subtitle2">
           Today is a good day to review your school metrics :)

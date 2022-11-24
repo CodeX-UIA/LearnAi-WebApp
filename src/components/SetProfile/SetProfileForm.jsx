@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { Box, Button } from '@mui/material';
 
@@ -7,6 +8,7 @@ import InputGroup2 from './InputGroup2';
 import axios from 'axios';
 
 const SetProfileForm = ({ activeSet, setActive }) => {
+  const router = useRouter();
   const [type, setType] = React.useState('');
   const [language, setLanguage] = React.useState('');
   const [amenitiesRating, setAmenitiesRating] = React.useState();
@@ -70,6 +72,7 @@ const SetProfileForm = ({ activeSet, setActive }) => {
       [event.target.name]: event.target.checked
     });
   };
+
 
   const onSubmit = async(data) => {
     console.log(data);

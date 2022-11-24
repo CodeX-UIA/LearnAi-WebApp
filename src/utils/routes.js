@@ -6,6 +6,21 @@ import GridViewIcon from '@mui/icons-material/GridView';
 import AccountCircleTwoToneIcon from '@mui/icons-material/AccountCircleTwoTone';
 import DisplaySettingsTwoToneIcon from '@mui/icons-material/DisplaySettingsTwoTone';
 
+export const districtRoutes = [
+  {
+    name: 'Dashboard',
+    sidebarContent: true,
+    path: '/district/dashboard',
+    icon: <GridViewIcon />
+  },
+  {
+    name: 'Schools',
+    sidebarContent: true,
+    path: '/district/schools',
+    icon: <SchoolIcon />
+  }
+];
+
 const routes = [
   {
     name: 'Dashboard',
