@@ -47,12 +47,6 @@ const routes = [
     icon: <GroupIcon />
   },
   {
-    name: 'Subjects',
-    sidebarContent: true,
-    path: '/school/subjects',
-    icon: <ScienceIcon />
-  },
-  {
     name: 'Profile',
     innerContent: true,
     sidebarContent: true,
