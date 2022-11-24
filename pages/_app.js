@@ -9,11 +9,16 @@ import createEmotionCache from 'src/createEmotionCache';
 import { SidebarProvider } from 'src/contexts/SidebarContext';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
-import { SessionProvider } from 'next-auth/react'
+import { SessionProvider } from 'next-auth/react';
+import Script from 'next/script';
 
 const clientSideEmotionCache = createEmotionCache();
 
-function TokyoApp({Component, emotionCache = clientSideEmotionCache,pageProps: { session, ...pageProps }}) {
+function TokyoApp({
+  Component,
+  emotionCache = clientSideEmotionCache,
+  pageProps: { session, ...pageProps }
+}) {
   // const { Component, emotionCache = clientSideEmotionCache,pageProps } = props;
   const getLayout = Component.getLayout ?? ((page) => page);
 
@@ -23,26 +28,29 @@ function TokyoApp({Component, emotionCache = clientSideEmotionCache,pageProps: {
 
   return (
     <SessionProvider session={session}>
-
-    <CacheProvider value={emotionCache}>
-      <Head>
-        <title>Tokyo Free White NextJS Javascript Admin Dashboard</title>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.1.0.js"></script>
-      </Head>
-      <SidebarProvider>
-        <ThemeProvider>
-          <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <CssBaseline />
-            {getLayout(<Component {...pageProps} />)}
-          </LocalizationProvider>
-        </ThemeProvider>
-      </SidebarProvider>
-    </CacheProvider>
-   </SessionProvider>
+      <CacheProvider value={emotionCache}>
+        <Head>
+          <title>Tokyo Free White NextJS Javascript Admin Dashboard</title>
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          />
+          <script
+            async
+            type="module"
+            src="https://public.tableau.com/javascripts/api/tableau.embedding.3.1.0.js"
+          ></script>
+        </Head>
+        <SidebarProvider>
+          <ThemeProvider>
+            <LocalizationProvider dateAdapter={AdapterDateFns}>
+              <CssBaseline />
+              {getLayout(<Component {...pageProps} />)}
+            </LocalizationProvider>
+          </ThemeProvider>
+        </SidebarProvider>
+      </CacheProvider>
+    </SessionProvider>
   );
 }
 
