@@ -9,11 +9,13 @@ import {
   Divider,
   Button
 } from '@mui/material';
-import AddStudentModal from 'src/components/School/Forms/AddSchool/AddMarkModal';
+import AddStudentModal from 'src/components/School/Forms/AddStudent/AddStudentModal';
+import AddTeacherModal from 'src/components/School/Forms/AddTeacher/AddTeacherModal';
 
 const Add = () => {
   const ref = useRef(null);
   const [isOpen, setOpen] = useState(false);
+  const [tModalOpen, setTModalOpen] = useState(false);
 
   const [modalOpen, setModalOpen] = React.useState(false);
 
@@ -29,6 +31,13 @@ const Add = () => {
     handleClose();
   };
   const handleModalClose = () => {
+    setModalOpen(false);
+  };
+  const handleTModalOpen = () => {
+    setModalOpen(true);
+    handleClose();
+  };
+  const handleTModalClose = () => {
     setModalOpen(false);
   };
 
@@ -66,21 +75,12 @@ const Add = () => {
               Add Student
             </Typography>
           </Button>
-          <Button sx={{ borderRadius: 0 }}>
+          <Button sx={{ borderRadius: 0 }} onClick={handleModalOpen}>
             <Typography
               variant="body"
               sx={{ p: 1, color: '#646F87', fontWeight: 400 }}
             >
               Add Teacher
-            </Typography>
-          </Button>
-
-          <Button sx={{ borderRadius: 0 }}>
-            <Typography
-              variant="body"
-              sx={{ p: 1, color: '#646F87', fontWeight: 400 }}
-            >
-              Add Course
             </Typography>
           </Button>
         </Box>
@@ -90,6 +90,12 @@ const Add = () => {
         setOpen={setModalOpen}
         handleModalOpen={handleModalOpen}
         handleModalClose={handleModalClose}
+      />
+      <AddTeacherModal
+        open={tModalOpen}
+        setOpen={setTModalOpen}
+        handleModalOpen={handleTModalOpen}
+        handleModalClose={handleTModalClose}
       />
     </Box>
   );
