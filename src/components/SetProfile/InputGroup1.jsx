@@ -23,13 +23,13 @@ const InputGroup1 = ({
       }}
     >
       <Controller
-        id="districtName"
-        name="districtName"
+        id="schoolName"
+        name="schoolName"
         control={control}
         render={({ field }) => (
           <TextField
             sx={{ width: '100%' }}
-            label="District Name"
+            label="School Name"
             placeholder="Enter name"
             multiline
             {...field}
@@ -37,47 +37,107 @@ const InputGroup1 = ({
         )}
       />
       <Controller
-        id="code"
-        name="code"
+        id="email"
+        name="email"
         control={control}
         render={({ field }) => (
           <TextField
             sx={{ width: '100%' }}
-            label="Code"
-            placeholder="Enter district code"
+            label="Email"
+            placeholder="Enter school email"
             multiline
             {...field}
           />
         )}
       />
       <Controller
-        name="headquarters"
+        name="schoolID"
         control={control}
         render={({ field }) => (
           <TextField
             multiline
             {...field}
-            id="headquarters"
-            label="Headquarters"
+            id="schoolID"
+            label="School ID"
             sx={{ width: '100%' }}
-            placeholder="Enter Headquarters"
+            placeholder="Enter school ID"
           />
         )}
       />
       <Controller
-        name="numOfSchools"
+        name="type"
+        control={control}
+        render={({ field }) => (
+          <FormControl fullWidth {...field}>
+            <InputLabel id="type_label">School Type</InputLabel>
+            <Select
+              multiline
+              name="type"
+              value={type}
+              label="School Type"
+              labelId="type_label"
+              sx={{ textAlign: 'left' }}
+              onChange={handleTypeChange}
+            >
+              {schoolTypes?.map(({ label, value }) => (
+                <MenuItem key={value} value={value}>
+                  {label}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        )}
+      />
+      <Controller
+        name="language"
+        control={control}
+        render={({ field }) => (
+          <FormControl fullWidth {...field}>
+            <InputLabel id="language_label">Language</InputLabel>
+            <Select
+              multiline
+              name="language"
+              value={language}
+              label="Language"
+              labelId="language_label"
+              sx={{ textAlign: 'left' }}
+              onChange={handleLanguageChange}
+            >
+              {languages?.map(({ label, value }) => (
+                <MenuItem key={value} value={value}>
+                  {label}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        )}
+      />
+      <Controller
+        name="phone"
         control={control}
         render={({ field }) => (
           <TextField
+            multiline
             {...field}
-            id="numOfSchools"
-            label="Number Of Schools"
+            id="phone"
+            label="Phone Number"
             sx={{ width: '100%' }}
-            placeholder="Enter Number Of Schools"
-            type="number"
-            InputLabelProps={{
-              shrink: true
-            }}
+            placeholder="Enter school phone number"
+          />
+        )}
+      />
+      <Controller
+        name="address"
+        control={control}
+        render={({ field }) => (
+          <TextField
+            multiline
+            {...field}
+            id="address"
+            address={3}
+            label="Address"
+            sx={{ width: '100%' }}
+            placeholder="Enter school address"
           />
         )}
       />

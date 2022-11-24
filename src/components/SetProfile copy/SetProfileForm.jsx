@@ -72,14 +72,11 @@ const SetProfileForm = ({ activeSet, setActive }) => {
       [event.target.name]: event.target.checked
     });
   };
-  const onSubmit = async (data) => {
+  const onSubmit = async(data) => {
     console.log(data);
-    let da = await axios.post(
-      'http://localhost:3000/api/controller/registerschool',
-      {
-        data
-      }
-    );
+    let da = await axios.post('http://localhost:3000/api/controller/registerschool', {
+      data
+    });
     console.log(da);
   };
 
