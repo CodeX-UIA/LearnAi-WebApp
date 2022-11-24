@@ -10,54 +10,49 @@ export default async function handler(req, res) {
     //     return res.send({message:"A user with this email id already exists"});
     // }
     // console.log(check1);
-
+    console.log(req.body);
     const details = new student({
-    email:req.body.email, 
-    name:req.body.name,
+    email: "  ", 
+    name:req.body.data.name,
     teacher:"harsh", 
     Race:"Asian",
-    sex:req.body.sex,
-    age:req.body.age,
-    address:req.body.address,
-    famsize:req.body.famsize,
-    Pstatus:req.body.Pstatus,
-    Medu:req.body.Medu,
-    Fedu:req.body.Fedu,
-    Mjob:req.body.Mjob,
-    Fjob:req.body.Fjob,
-    reason:req.body.reason,
-    guardian:req.body.guardian,
-    traveltime:req.body.traveltime,
-    studytime:req.body.studytime,
-    failures:req.body.failures,
-    schoolsup:req.body.schoolsup,
-    famsup:req.body.famsup,
-    paid:req.body.paid,
-    activities:req.body.activities,
-    nursery:req.body.nursery,
-    higher:req.body.higher,
-    internet:req.body.internet,
-    romantic:req.body.romantic,
-    famrel:req.body.famrel,
-    freetime:req.body.freetime,
-    goout:req.body.goout,
-    Dalc:req.body.Dalc,
-    Walc:req.body.Walc,
-    health:req.body.health,
-    absences:req.body.absences,
-    G1:req.body.G1,
-    G2:req.body.G2,
-    G3:"100"
+    sex:req.body.data.sex,
+    age:req.body.data.Age,
+    address:'U',
+    famsize:'GT3',
+    Pstatus:req.body.data.Pstatus,
+    Medu:req.body.data.Medu,
+    Fedu:req.body.data.Fedu,
+    Mjob:"other",
+    Fjob:"other",
+    reason: "other",
+   guardian: "mother",
+   traveltime: 1,
+   studytime: 2,
+   failures: 3,
+   schoolsup: "yes",
+   famsup: "no",
+   paid: "yes",
+   activities: "no",
+   nursery: "yes",
+   higher: "yes",
+   internet: "yes",
+   romantic: "no",
+   famrel: 4,
+   freetime: 3,
+   goout: 2,
+   Dalc: 2,
+   Walc: 3,
+   health: 3,
+   absences: 10,
+   G1:'0',
+   G2: '0',
+   G3:'0'
 
     });
     details.save();
 
-    const use=new users({
-      email:req.body.email,
-      role:req.body.role
-  })
-  use.save()
-
+ 
     res.send({ message: "Successfully registered" });
   } catch (err) {
     res.send({ message: err });

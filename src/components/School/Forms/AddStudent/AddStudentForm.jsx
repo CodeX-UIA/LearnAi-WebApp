@@ -56,12 +56,11 @@ const SetProfileForm = ({}) => {
     setValue(event.target.name, event.target.value);
   };
 
-  const onSubmit = async (data) => {
+
+  const onSubmit = async(data) => {
     console.log(data);
-    let da = await axios.post(
-      'http://localhost:3000/api/controller/registerstudent',
-      { data }
-    );
+    let da  = await axios.post('http://localhost:3000/api/controller/registerstudent' , {data});
+
     console.log(da);
   };
 
@@ -86,6 +85,7 @@ const SetProfileForm = ({}) => {
             justifyContent: 'space-between'
           }}
         >
+
           <Box sx={{ width: '100%' }}>
             <Typography sx={{ fontSize: '16px', marginBottom: 1 }}>
               Name
