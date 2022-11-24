@@ -30,7 +30,7 @@ import {
 
 function HeaderUserbox() {
   const user = {
-    name: 'Catherine Pike',
+    name: 'Private School',
     avatar: '/static/images/avatars/1.jpg',
     school: 'Gambia Methodist Academy'
   };

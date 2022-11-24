@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 import { Box, Button } from '@mui/material';
 
@@ -6,6 +7,7 @@ import InputGroup1 from './InputGroup1';
 import InputGroup2 from './InputGroup2';
 
 const SetProfileForm = ({ activeSet, setActive }) => {
+  const router = useRouter();
   const [type, setType] = React.useState('');
   const [language, setLanguage] = React.useState('');
   const [amenitiesRating, setAmenitiesRating] = React.useState();
@@ -70,7 +72,9 @@ const SetProfileForm = ({ activeSet, setActive }) => {
     });
   };
 
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    router.push('/school/dashboard');
+  };
 
   const schoolTypes = [
     {

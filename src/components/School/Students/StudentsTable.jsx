@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { useRef, useState } from 'react';
 import { format, subDays } from 'date-fns';
 import {
   Box,
@@ -14,7 +14,9 @@ import {
   Typography,
   IconButton,
   TableContainer,
-  TablePagination
+  TablePagination,
+  Button,
+  Popover
 } from '@mui/material';
 
 import EditTwoToneIcon from '@mui/icons-material/EditTwoTone';
@@ -164,9 +166,21 @@ const studentDetails = [
 const StudentsTable = () => {
   const [page, setPage] = useState(0);
   const [limit, setLimit] = useState(5);
+  const [status, setStatus] = useState();
   const [filters, setFilters] = useState({
     status: null
   });
+
+  const ref = useRef(null);
+  const [isOpen, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   const theme = useTheme();
 
@@ -185,7 +199,7 @@ const StudentsTable = () => {
     limit
   );
 
-  const getStatusLabel = (cryptoOrderStatus) => {
+  const getStatusLabel = (studentStatus) => {
     const map = {
       dropOut: {
         text: 'Drop Out',
@@ -201,7 +215,7 @@ const StudentsTable = () => {
       }
     };
 
-    const { text, color } = map[cryptoOrderStatus];
+    const { text, color } = map[studentStatus];
 
     return <Label color={color}>{text}</Label>;
   };
@@ -315,12 +329,14 @@ const StudentsTable = () => {
                   <TableCell align="right">
                     <Tooltip title="Change status" arrow>
                       <IconButton
+                        ref={ref}
                         sx={{
                           '&:hover': {
                             background: theme.colors.primary.lighter
                           },
                           color: theme.palette.primary.main
                         }}
+                        onClick={handleOpen}
                         color="inherit"
                         size="small"
                       >
@@ -350,6 +366,51 @@ const StudentsTable = () => {
           </TableBody>
         </Table>
       </TableContainer>
+      <Popover
+        anchorEl={ref.current}
+        onClose={handleClose}
+        open={isOpen}
+        anchorOrigin={{
+          vertical: 'top',
+          horizontal: 'right'
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right'
+        }}
+      >
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Button sx={{ borderRadius: 0, width: '100%' }}>
+            <Typography
+              variant="body"
+              sx={{ px: 1, color: '#646F87', fontWeight: 400 }}
+            >
+              Dropped Out
+            </Typography>
+          </Button>
+          <Button sx={{ borderRadius: 0, width: '100%' }}>
+            <Typography
+              variant="body"
+              sx={{ px: 1, color: '#646F87', fontWeight: 400 }}
+            >
+              Graduated
+            </Typography>
+          </Button>
+          <Button sx={{ borderRadius: 0, width: '100%' }}>
+            <Typography
+              variant="body"
+              sx={{ px: 1, color: '#646F87', fontWeight: 400 }}
+            >
+              Transferred
+            </Typography>
+          </Button>
+        </Box>
+      </Popover>
       <Box p={2}>
         <TablePagination
           component="div"
