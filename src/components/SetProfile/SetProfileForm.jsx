@@ -73,7 +73,8 @@ const SetProfileForm = ({ activeSet, setActive }) => {
   };
 
   const onSubmit = (data) => {
-    router.push('/school/dashboard');
+    console.log(data);
+    router.push('/district/dashboard');
   };
 
   const schoolTypes = [
