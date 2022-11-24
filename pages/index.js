@@ -30,7 +30,6 @@ function Overview() {
     <OverviewWrapper>
       <Head>
         <title>LearnAI</title>
-        
       </Head>
       <HeaderWrapper>
         <Container maxWidth="lg">
@@ -48,13 +47,10 @@ function Overview() {
                   sx={{ ml: 2 }}
                   component={Link}
                   variant="contained"
-                  href="/school/dashboard"
+                  href="/auth/register"
                 >
-                  Live Preview
+                  Register
                 </Button>
-                
-                <button onClick={() => signIn()}>Sign in</button>
-              
               </Box>
             </Box>
           </Box>
